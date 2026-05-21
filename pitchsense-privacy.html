@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Pitch Sense / 音程センス</title>
+<style>
+  :root {
+    --neon: #4cff66;
+    --neon-dim: #2db84a;
+    --bg: #050505;
+    --fg: #d8ffe3;
+    --muted: #6f9b7d;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, "SF Mono", ui-monospace, Menlo, monospace;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    line-height: 1.65;
+    font-size: 14px;
+  }
+  h1 {
+    color: var(--neon);
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin: 0 0 4px;
+    text-shadow: 0 0 10px rgba(76, 255, 102, 0.5);
+  }
+  h2 {
+    color: var(--neon);
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-top: 32px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--neon-dim);
+    padding-bottom: 4px;
+  }
+  h3 {
+    color: var(--neon);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    margin-top: 22px;
+    text-transform: uppercase;
+  }
+  a { color: var(--neon); }
+  a:hover { text-shadow: 0 0 4px var(--neon); }
+  .meta {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .lang-switch {
+    font-size: 12px;
+    margin: 16px 0 24px;
+  }
+  hr {
+    border: none;
+    border-top: 1px dashed var(--neon-dim);
+    margin: 40px 0;
+  }
+  p { margin: 8px 0 12px; }
+</style>
+</head>
+<body>
+
+<h1>[ PITCH SENSE / 音程センス ]</h1>
+<p class="meta">Privacy Policy &middot; Last updated: 2026-05-21</p>
+
+<p class="lang-switch">
+  <a href="#en">English</a>
+  &nbsp;|&nbsp;
+  <a href="#ja">日本語</a>
+</p>
+
+<hr>
+
+<h2 id="en">English</h2>
+
+<h3>Summary</h3>
+<p>Pitch Sense does not collect, store, or transmit any user data. The app is a pitch-matching mini-game that processes microphone audio entirely on-device and discards it immediately after each measurement. There are no servers, no analytics, no advertising, no accounts.</p>
+
+<h3>Data we collect</h3>
+<p>None. Pitch Sense does not collect personal information, usage analytics, crash reports, location, contacts, photos, advertising identifiers, or any other form of data.</p>
+
+<h3>Permissions we use</h3>
+<p>Pitch Sense requests <strong>Microphone</strong> access only. The microphone is used solely to capture the sound you produce (voice, whistle, hum, or external tone) so the app can estimate its fundamental frequency and compare it to the target pitch. Microphone access is requested at first use via the standard iOS permission dialog and can be revoked at any time in Settings &gt; Privacy &amp; Security &gt; Microphone &gt; Pitch Sense.</p>
+<p>No other permissions (camera, photos, location, contacts, Bluetooth, etc.) are requested.</p>
+
+<h3>Microphone audio handling</h3>
+<p>Microphone audio is processed only as a transient signal stream:</p>
+<p>1. Audio buffers from Apple's AVAudioEngine are read in real time.<br>
+2. Each buffer is fed to a Fast Fourier Transform (Apple's Accelerate framework) to estimate the dominant frequency.<br>
+3. Buffers and frequency estimates are kept in memory only for the duration of a single measurement (up to about 3 seconds).<br>
+4. When the measurement ends, all audio buffers and intermediate data are discarded.</p>
+<p>Microphone audio is <strong>never</strong> written to disk, saved to the photo library, uploaded to any server, transmitted over the network, or shared with any third party. Closing the app discards all in-memory state.</p>
+
+<h3>Network usage</h3>
+<p>Pitch Sense does not perform any network communication. It does not load remote content, fetch updates from any server, or send any data outside the device. The app works fully without an internet connection.</p>
+
+<h3>Third-party services</h3>
+<p>Pitch Sense does not integrate any third-party SDKs, analytics tools, or advertising networks. The app uses only Apple's first-party frameworks (SwiftUI, UIKit, AVFoundation, Accelerate, Foundation).</p>
+
+<h3>Children</h3>
+<p>Pitch Sense is rated 4+ and is suitable for all ages. Because the app does not collect any data, no special considerations are required under children's privacy regulations such as COPPA or GDPR-K.</p>
+
+<h3>Changes to this policy</h3>
+<p>If this privacy policy changes in a future version of the app, the updated policy will be published at this URL. Material changes will be noted at the top of this page along with the new revision date.</p>
+
+<h3>Contact</h3>
+<p>For privacy-related questions, contact:<br>
+<a href="mailto:hondasage11029@gmail.com">hondasage11029@gmail.com</a></p>
+
+<hr>
+
+<h2 id="ja">日本語</h2>
+
+<h3>概要</h3>
+<p>「音程センス」はユーザーのデータを一切収集・保存・送信しません。本アプリはマイクから入力された音声を端末内でリアルタイム解析し、目標の音程 (Hz) にどれだけ近かったかを判定するミニゲームで、解析が終わった音声はその場で破棄されます。サーバ、アナリティクス、広告、アカウントは一切ありません。</p>
+
+<h3>収集する情報</h3>
+<p>ありません。「音程センス」は個人情報、利用統計、クラッシュレポート、位置情報、連絡先、写真、広告識別子など、いかなるデータも収集しません。</p>
+
+<h3>使用するパーミッション</h3>
+<p>「音程センス」は <strong>マイク</strong> のみアクセスを要求します。マイクは、プレイヤーが発した音 (声・口笛・ハミング・外部の音源) の基本周波数を推定し、目標音程と比較するためにのみ使用します。マイクへのアクセスは初回利用時に iOS の標準ダイアログで要求し、設定 &gt; プライバシーとセキュリティ &gt; マイク &gt; 音程センス でいつでも取り消せます。</p>
+<p>その他のパーミッション (カメラ、写真、位置情報、連絡先、Bluetooth など) は一切要求しません。</p>
+
+<h3>マイク音声の取り扱い</h3>
+<p>マイク音声は一時的なストリームとしてのみ処理されます:</p>
+<p>1. Apple の AVAudioEngine からリアルタイムにオーディオバッファを取得<br>
+2. 各バッファを高速フーリエ変換 (Apple の Accelerate フレームワーク) で解析し、優勢周波数を推定<br>
+3. バッファと推定結果は 1 回の計測中 (最長 3 秒程度) のみメモリ上に保持<br>
+4. 計測終了と同時にすべてのバッファと中間データを破棄</p>
+<p>マイク音声は<strong>絶対に</strong>ディスクへの保存、写真ライブラリへの保存、サーバへのアップロード、ネットワーク送信、第三者との共有を行いません。アプリを終了するとメモリ上のデータもすべて破棄されます。</p>
+
+<h3>ネットワーク利用</h3>
+<p>「音程センス」はネットワーク通信を一切行いません。リモートからのコンテンツ読み込み、サーバからの更新取得、外部へのデータ送信のいずれも発生しません。インターネット接続なしで完全に動作します。</p>
+
+<h3>第三者サービス</h3>
+<p>「音程センス」にはサードパーティ SDK、アナリティクスツール、広告ネットワークは一切組み込まれていません。Apple の純正フレームワーク (SwiftUI、UIKit、AVFoundation、Accelerate、Foundation) のみを使用しています。</p>
+
+<h3>お子様の利用について</h3>
+<p>「音程センス」は 4+ 区分で全年齢向けです。一切のデータを収集しないため、COPPA や GDPR-K 等の児童プライバシー関連法令に関する特別な配慮は不要です。</p>
+
+<h3>本ポリシーの変更</h3>
+<p>本プライバシーポリシーが将来のアプリバージョンで変更される場合、更新版を本 URL で公開します。重要な変更はページ冒頭に新しい更新日とともに記載します。</p>
+
+<h3>お問い合わせ</h3>
+<p>プライバシーに関するお問い合わせは:<br>
+<a href="mailto:hondasage11029@gmail.com">hondasage11029@gmail.com</a></p>
+
+</body>
+</html>
