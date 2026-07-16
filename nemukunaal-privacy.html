@@ -80,7 +80,7 @@
 <h2 id="en">English</h2>
 
 <h3>Summary</h3>
-<p>Nemukunaal does not collect, store, or transmit any personal data. The app is a selfie mirror that helps users notice their own sleepy-looking facial expression. Camera frames are processed entirely on-device and are never recorded, saved, uploaded, or shared.</p>
+<p>Nemukunaal does not collect, store, or transmit any personal data. The app is a selfie mirror that helps users notice their own sleepy-looking facial expression. Camera frames are processed entirely on-device and are never recorded, saved, uploaded, or shared. The current app does not use the TrueDepth API, ARKit face tracking, depth maps, face mesh data, or any facial biometric identification.</p>
 
 <h3>Data we collect</h3>
 <p>None. Nemukunaal does not collect personal information, usage analytics, crash reports, location, contacts, photos, advertising identifiers, camera images, face images, biometric data, health data, or any other form of user data.</p>
@@ -96,6 +96,10 @@
 3. The app displays the live mirror and overlay on screen.<br>
 4. Frames and intermediate landmark estimates are discarded during the live session.</p>
 <p>Camera images are <strong>never</strong> recorded as video, saved as photos, written to disk, uploaded to any server, transmitted over the network, or shared with any third party.</p>
+
+<h3>Face data and TrueDepth API</h3>
+<p>The current version of Nemukunaal does not use the TrueDepth API or ARKit face tracking. It does not access, collect, store, transmit, or share depth maps, face mesh data, ARFaceAnchor data, TrueDepth camera data, facial biometric identifiers, or face templates.</p>
+<p>The app uses Apple's on-device Vision framework only to estimate temporary face and eye landmark positions for drawing the live visual overlay. These temporary estimates remain in memory only during the live mirror session and are discarded immediately. They are not saved, linked to a user identity, uploaded, shared with third parties, or used for authentication, identification, tracking, advertising, analytics, or profiling.</p>
 
 <h3>Local records</h3>
 <p>The app may store simple session history, such as completion times, only inside the app's local storage on your device. These records are not linked to your identity and are never sent to the developer or any third party. You can delete the app to remove the local records.</p>
@@ -125,7 +129,7 @@
 <h2 id="ja">日本語</h2>
 
 <h3>概要</h3>
-<p>「眠クナクナール」は、ユーザーの個人データを一切収集・保存・送信しません。本アプリは、自分の眠そうな表情に気づくための自撮りミラーアプリです。カメラ映像はすべて端末内で処理され、録画・保存・アップロード・共有されることはありません。</p>
+<p>「眠クナクナール」は、ユーザーの個人データを一切収集・保存・送信しません。本アプリは、自分の眠そうな表情に気づくための自撮りミラーアプリです。カメラ映像はすべて端末内で処理され、録画・保存・アップロード・共有されることはありません。現在のアプリは TrueDepth API、ARKit の顔トラッキング、深度マップ、顔メッシュデータ、顔の生体認証識別を使用しません。</p>
 
 <h3>収集する情報</h3>
 <p>ありません。「眠クナクナール」は、氏名、メールアドレス、利用統計、クラッシュレポート、位置情報、連絡先、写真、広告識別子、カメラ画像、顔画像、生体情報、健康情報など、いかなるユーザーデータも収集しません。</p>
@@ -141,6 +145,10 @@
 3. ライブミラーとオーバーレイを画面に表示<br>
 4. フレームと中間的なランドマーク推定結果はライブセッション中に破棄</p>
 <p>カメラ映像は<strong>絶対に</strong>動画として録画、写真として保存、ディスク書き込み、サーバへのアップロード、ネットワーク送信、第三者との共有を行いません。</p>
+
+<h3>顔データと TrueDepth API について</h3>
+<p>現在の「眠クナクナール」は TrueDepth API または ARKit の顔トラッキングを使用しません。深度マップ、顔メッシュデータ、ARFaceAnchor データ、TrueDepth カメラデータ、顔の生体識別子、顔テンプレートをアクセス、収集、保存、送信、共有することはありません。</p>
+<p>本アプリは Apple のオンデバイス Vision フレームワークを使用し、ライブ表示のビジュアルオーバーレイを描画するために、一時的な顔・目元のランドマーク位置だけを推定します。これらの一時的な推定結果はライブミラーセッション中のメモリ上にのみ存在し、直ちに破棄されます。保存、ユーザー識別情報との紐付け、アップロード、第三者共有、認証、本人識別、トラッキング、広告、解析、プロファイリングには使用しません。</p>
 
 <h3>端末内の記録</h3>
 <p>本アプリは、完了時間などの簡単なセッション履歴を、お使いの端末内のアプリ領域にのみ保存する場合があります。これらの記録は個人を識別するものではなく、開発者や第三者に送信されません。アプリを削除すると端末内の記録も削除できます。</p>
