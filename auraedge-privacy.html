@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — AuraEdge / 感情モニタ</title>
+<style>
+  :root {
+    --neon: #5ce6ff;
+    --neon-dim: #2b93b5;
+    --bg: #05070c;
+    --fg: #e2f4fb;
+    --muted: #7f97a6;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, "SF Mono", ui-monospace, Menlo, monospace;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    line-height: 1.65;
+    font-size: 14px;
+  }
+  h1 {
+    color: var(--neon);
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin: 0 0 4px;
+    text-shadow: 0 0 10px rgba(92, 230, 255, 0.5);
+  }
+  h2 {
+    color: var(--neon);
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-top: 32px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--neon-dim);
+    padding-bottom: 4px;
+  }
+  h3 {
+    color: var(--neon);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    margin-top: 22px;
+    text-transform: uppercase;
+  }
+  a { color: var(--neon); }
+  a:hover { text-shadow: 0 0 4px var(--neon); }
+  .meta {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .lang-switch {
+    font-size: 12px;
+    margin: 16px 0 24px;
+  }
+  hr {
+    border: none;
+    border-top: 1px dashed var(--neon-dim);
+    margin: 40px 0;
+  }
+  p { margin: 8px 0 12px; }
+  ul { margin: 8px 0 12px; padding-left: 20px; }
+  li { margin: 4px 0; }
+</style>
+</head>
+<body>
+
+<h1>[ AURAEDGE / 感情モニタ ]</h1>
+<p class="meta">Privacy Policy &middot; Last updated: 2026-09-05</p>
+
+<p class="lang-switch">
+  <a href="#en">English</a>
+  &nbsp;|&nbsp;
+  <a href="#ja">日本語</a>
+</p>
+
+<hr>
+
+<h2 id="en">English</h2>
+
+<h3>Summary</h3>
+<p>AuraEdge does not collect, store, or transmit any personal data. The app reads your facial expression through the front camera and shows the estimated emotional state as a colour along the edge of the screen. All processing happens entirely on your device. Camera images and face data are never recorded, saved to disk, uploaded, or shared with anyone, including the developer. There are no servers, no accounts, no analytics, and no advertising. The app performs no network communication of any kind.</p>
+
+<h3>Data we collect</h3>
+<p>None. The developer receives no personal information, usage analytics, crash reports, location, contacts, photos, advertising identifiers, camera images, face images, face data, emotion data, biometric data, health data, or any other form of user data.</p>
+
+<h3>Permissions we use</h3>
+<p>AuraEdge requests <strong>Camera</strong> access only. The camera is used solely to estimate your facial expression while the app is in the foreground and you are running a monitoring session. Access is requested at first use through the standard iOS permission dialog and can be revoked at any time in Settings &gt; Privacy &amp; Security &gt; Camera &gt; AuraEdge. If access is denied, the app tells you so and does not start the camera.</p>
+<p>No other permissions (microphone, photos, location, contacts, Bluetooth, local network, etc.) are requested.</p>
+
+<h3>Face data and the TrueDepth API</h3>
+<p>This section is provided because the app uses Apple's ARKit face tracking, which on devices equipped with a TrueDepth camera uses the TrueDepth API.</p>
+<p>AuraEdge uses <strong>ARKit face tracking</strong> (<code>ARFaceTrackingConfiguration</code>) to obtain, in real time and only while a session is running:</p>
+<ul>
+  <li>facial expression coefficients (Apple's blend shape values, for example how much the corners of the mouth are raised or the brows are lowered)</li>
+  <li>the position and orientation of the head</li>
+</ul>
+<p>It also uses Apple's on-device <strong>Vision</strong> framework to check whether a face is still visible when expression tracking is momentarily lost, so the display does not flicker.</p>
+<p>All of this data is used <strong>only</strong> to estimate your current emotional state and to drive the colour and motion of the screen-edge light in real time. It is:</p>
+<ul>
+  <li><strong>never</strong> recorded, written to disk, or saved as a file, image, or video</li>
+  <li><strong>never</strong> transmitted over a network, uploaded to a server, or sent to the developer</li>
+  <li><strong>never</strong> shared with, or sold to, any third party</li>
+  <li><strong>never</strong> used to identify or authenticate anyone, and never linked to your identity</li>
+  <li><strong>never</strong> used for advertising, marketing, profiling, or any purpose other than the real-time on-screen display described here</li>
+</ul>
+<p>The app does not create or store face templates, face meshes, depth maps, or biometric identifiers. Values are held in memory only for the moment they are displayed and are discarded as new frames arrive. Everything is erased when the session ends or the app is closed.</p>
+
+<h3>How a session works</h3>
+<p>1. You start a session; the app requests camera access if it has not already been granted.<br>
+2. ARKit provides live expression coefficients and head pose on-device.<br>
+3. For the first two seconds the app measures your resting face, so that your own neutral expression is treated as neutral. This calibration exists only in memory and is discarded when the session ends.<br>
+4. The app combines these signals with simple gesture measurements (such as blink rate) to estimate an emotional state.<br>
+5. The screen edge is drawn in the corresponding colour. Nothing else is produced, kept, or sent.</p>
+
+<h3>Local storage</h3>
+<p>The app stores a small number of preference values on the device using Apple's UserDefaults. This data never leaves the device and contains no face data, no emotion history, and no personal information. It consists of:</p>
+<ul>
+  <li>Your selected UI language (Japanese or English)</li>
+  <li>Whether the screen is dimmed while monitoring, and the chosen brightness level</li>
+  <li>Whether the eco camera setting (lower resolution) is enabled</li>
+  <li>Whether the information panel is pinned on screen</li>
+  <li>Whether the detailed readout is shown</li>
+</ul>
+<p>No emotion readings, session logs, or history of any kind are written to storage. Deleting the app removes these preferences.</p>
+
+<h3>Battery information</h3>
+<p>While a session is running, the app reads the device's own battery level so it can show you how much power the session is using. This value is displayed on screen only. It is not stored, not linked to your identity, and not sent anywhere.</p>
+
+<h3>Network usage</h3>
+<p>AuraEdge performs no network communication whatsoever. It loads no remote content, contacts no server, and sends no data outside the device. The app works fully in airplane mode.</p>
+
+<h3>Third-party services</h3>
+<p>AuraEdge integrates no third-party SDKs, analytics tools, advertising networks, or tracking services. It uses only Apple's first-party frameworks (SwiftUI, ARKit, Vision, AVFoundation, UIKit, Combine, QuartzCore, simd, Foundation).</p>
+
+<h3>What this app is not</h3>
+<p>AuraEdge is not a medical device. It is not intended to diagnose, treat, cure, or prevent any medical or psychological condition, and it must not be used for clinical, diagnostic, or safety-critical purposes.</p>
+<p>Emotion estimated from a facial expression is an <strong>estimate, not a fact</strong>. A facial expression does not always correspond to what a person actually feels, and accuracy varies with lighting, camera angle, eyewear, individual differences, and cultural differences in how emotion is expressed. Please treat the result as a rough, playful indication only.</p>
+<p>The app is designed for you to observe your own expression. It must not be used to monitor, assess, or make decisions about other people, and in particular must not be used in the workplace or in educational institutions. Emotion recognition in those settings is prohibited under the European Union's AI Act, and comparable rules may apply in other regions.</p>
+
+<h3>Children</h3>
+<p>Because AuraEdge does not collect any data, no special considerations are required under children's privacy regulations such as COPPA or GDPR-K.</p>
+
+<h3>Your rights</h3>
+<p>Because no personal data ever leaves your device or reaches the developer, there is no stored data for us to access, correct, export, or delete on your behalf. You can remove everything the app keeps by deleting the app, and you can withdraw camera access at any time in the iOS Settings app.</p>
+
+<h3>Changes to this policy</h3>
+<p>If this privacy policy changes in a future version of the app, the updated policy will be published at this URL. Material changes will be noted at the top of this page along with the new revision date.</p>
+
+<h3>Contact</h3>
+<p>For privacy-related questions, contact:<br>
+<a href="mailto:hondasage11029@gmail.com">hondasage11029@gmail.com</a></p>
+
+<hr>
+
+<h2 id="ja">日本語</h2>
+
+<h3>概要</h3>
+<p>「感情モニタ」は、個人データを一切収集・保存・送信しません。本アプリは前面カメラで表情を読み取り、推定した感情の状態を画面の縁の色として表示します。処理はすべてお使いの端末内で完結します。カメラ映像や顔のデータが録画・ディスク保存・アップロード・共有されることは、開発者に対しても含め一切ありません。サーバー、アカウント、アナリティクス、広告はありません。本アプリはいかなるネットワーク通信も行いません。</p>
+
+<h3>収集する情報</h3>
+<p>ありません。開発者は、個人情報、利用統計、クラッシュレポート、位置情報、連絡先、写真、広告識別子、カメラ映像、顔画像、顔データ、感情データ、生体データ、健康データなど、いかなるデータも受領しません。</p>
+
+<h3>使用するパーミッション</h3>
+<p>本アプリが要求するのは<strong>カメラ</strong>のみです。カメラは、アプリを前面で起動し計測を実行している間に表情を推定するためだけに使用します。初回使用時に iOS 標準の許可ダイアログで要求し、設定 &gt; プライバシーとセキュリティ &gt; カメラ &gt; 感情モニタ からいつでも取り消せます。許可されていない場合はその旨を画面に表示し、カメラは起動しません。</p>
+<p>マイク、写真、位置情報、連絡先、Bluetooth、ローカルネットワークなど、その他のパーミッションは一切要求しません。</p>
+
+<h3>顔データと TrueDepth API について</h3>
+<p>本アプリは Apple の ARKit 顔トラッキングを使用します。TrueDepth カメラを搭載した端末では TrueDepth API を利用するため、本項目を明記します。</p>
+<p>「感情モニタ」は <strong>ARKit 顔トラッキング</strong>（<code>ARFaceTrackingConfiguration</code>）を使用し、計測中のみリアルタイムに次の情報を取得します:</p>
+<ul>
+  <li>表情の係数（Apple のブレンドシェイプ値。たとえば口角がどれだけ上がっているか、眉がどれだけ下がっているか）</li>
+  <li>頭部の位置と向き</li>
+</ul>
+<p>また、表情の追跡が一瞬途切れたときに表示がちらつかないよう、顔がまだ映っているかの確認に Apple の端末内 <strong>Vision</strong> フレームワークを使用します。</p>
+<p>これらのデータは、現在の感情状態を推定し、画面の縁の色と動きをリアルタイムに描画するためだけに使用します。以下のことは<strong>一切行いません</strong>:</p>
+<ul>
+  <li>録画、ディスクへの書き込み、画像・動画・ファイルとしての保存</li>
+  <li>ネットワーク送信、サーバーへのアップロード、開発者への送信</li>
+  <li>第三者への提供・共有・販売</li>
+  <li>個人の識別・認証への利用、および利用者の身元との紐付け</li>
+  <li>広告、マーケティング、プロファイリング、その他ここに記載した画面表示以外の目的への利用</li>
+</ul>
+<p>顔テンプレート、フェイスメッシュ、深度マップ、生体識別子の作成・保存は行いません。値は表示のためにメモリ上に一瞬保持されるだけで、新しいフレームが届くたびに破棄されます。計測の終了時およびアプリの終了時にはすべて消去されます。</p>
+
+<h3>計測中の処理の流れ</h3>
+<p>1. 計測を開始します。カメラの許可が未取得の場合はここで要求します。<br>
+2. ARKit が端末内で表情係数と頭部姿勢を提供します。<br>
+3. 最初の 2 秒間は「素の表情」を測定し、その人本来の無表情を平常として扱えるようにします。この校正結果はメモリ上にのみ存在し、計測終了時に破棄されます。<br>
+4. これらの信号とまばたき頻度などの簡単な仕草の測定値を組み合わせて、感情の状態を推定します。<br>
+5. 対応する色で画面の縁を描画します。それ以外のものは生成も保持も送信もしません。</p>
+
+<h3>端末内データ</h3>
+<p>本アプリは Apple の UserDefaults を使用して、わずかな設定値を端末内に保存します。これらが端末外へ出ることはなく、顔データ・感情の履歴・個人情報は一切含まれません。内容は以下のとおりです:</p>
+<ul>
+  <li>選択中の UI 言語（日本語／英語）</li>
+  <li>計測中に画面を暗くするかどうか、および選択中の明るさ</li>
+  <li>エコ（低解像度カメラ）設定の有無</li>
+  <li>情報パネルを常時表示にしているかどうか</li>
+  <li>詳細表示を有効にしているかどうか</li>
+</ul>
+<p>感情の推定結果、計測ログ、履歴の類は一切保存しません。アプリを削除することで、これらの設定値は消去されます。</p>
+
+<h3>バッテリー情報</h3>
+<p>計測中は、消費電力の目安を画面に表示するために端末自身のバッテリー残量を参照します。この値は画面に表示されるのみで、保存も、身元との紐付けも、外部への送信も行いません。</p>
+
+<h3>ネットワーク利用</h3>
+<p>「感情モニタ」はいかなるネットワーク通信も行いません。リモートコンテンツの読み込み、サーバーへの接続、端末外へのデータ送信は一切ありません。機内モードでも完全に動作します。</p>
+
+<h3>第三者サービス</h3>
+<p>本アプリにはサードパーティ SDK、アナリティクスツール、広告ネットワーク、トラッキングサービスは一切組み込まれていません。Apple の純正フレームワーク（SwiftUI、ARKit、Vision、AVFoundation、UIKit、Combine、QuartzCore、simd、Foundation）のみを使用しています。</p>
+
+<h3>本アプリではないもの</h3>
+<p>「感情モニタ」は医療機器ではありません。医学的・心理的な状態の診断、治療、予防を目的としたものではなく、臨床用途、診断用途、安全に関わる用途に使用してはいけません。</p>
+<p>表情から推定した感情は<strong>推定であって事実ではありません</strong>。表情は必ずしもその人が実際に感じていることと一致せず、精度は照明、カメラの角度、眼鏡の有無、個人差、感情表出の文化差によって変動します。あくまで目安・娯楽としてお楽しみください。</p>
+<p>本アプリは、利用者自身が自分の表情を観察するために設計されています。他者の監視・評価・判断に使用してはならず、特に職場や教育機関での使用は禁止します。これらの場面での感情推定は欧州連合の AI 法で禁止されており、他の地域でも同様の規制が適用される場合があります。</p>
+
+<h3>お子様の利用について</h3>
+<p>本アプリは一切のデータを収集しないため、COPPA や GDPR-K 等の児童プライバシー関連法令に関する特別な配慮は不要です。</p>
+
+<h3>利用者の権利</h3>
+<p>個人データが端末外へ出ることも、開発者に届くこともないため、当方が代理で開示・訂正・提供・削除できる保存データは存在しません。アプリを削除すれば本アプリが保持するものはすべて消去でき、カメラの許可は iOS の設定アプリからいつでも取り消せます。</p>
+
+<h3>本ポリシーの変更</h3>
+<p>本プライバシーポリシーが将来のアプリバージョンで変更される場合、更新版を本 URL で公開します。重要な変更はページ冒頭に新しい更新日とともに記載します。</p>
+
+<h3>お問い合わせ</h3>
+<p>プライバシーに関するお問い合わせは:<br>
+<a href="mailto:hondasage11029@gmail.com">hondasage11029@gmail.com</a></p>
+
+</body>
+</html>
